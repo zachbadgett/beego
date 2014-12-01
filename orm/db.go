@@ -82,7 +82,7 @@ func (d *dbBase) collectValues(mi *modelInfo, ind reflect.Value, cols []string, 
 		} else {
 			panic(fmt.Errorf("wrong db field/column name `%s` for model `%s`", column, mi.fullName))
 		}
-		if fi.dbcol == false || fi.auto && skipAuto {
+		if fi.dbcol == false || fi.auto && skipAuto || fi.pk {
 			continue
 		}
 		value, err := d.collectFieldValue(mi, fi, ind, insert, tz)

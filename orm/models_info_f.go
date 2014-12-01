@@ -395,11 +395,12 @@ checkType:
 		fi.index = false
 	}
 
-	if fi.auto || fi.pk || fi.unique || fieldType == TypeDateField || fieldType == TypeDateTimeField {
+	if fi.auto || fi.unique || fieldType == TypeDateField || fieldType == TypeDateTimeField {
 		// can not set default
 		initial.Clear()
 	}
 
+/*
 	if initial.Exist() {
 		v := initial
 		switch fieldType {
@@ -429,6 +430,7 @@ checkType:
 			goto wrongTag
 		}
 	}
+*/
 
 	fi.initial = initial
 end:

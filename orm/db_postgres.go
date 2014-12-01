@@ -122,7 +122,7 @@ func (d *dbBasePostgres) ReplaceMarks(query *string) {
 
 // make returning sql support for postgresql.
 func (d *dbBasePostgres) HasReturningID(mi *modelInfo, query *string) (has bool) {
-	if mi.fields.pk.auto {
+	if mi.fields.pk.pk {
 		if query != nil {
 			*query = fmt.Sprintf(`%s RETURNING "%s"`, *query, mi.fields.pk.column)
 		}
