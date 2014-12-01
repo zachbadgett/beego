@@ -1,3 +1,10 @@
+# zachbadgett/beego/orm difference
+
+* default tag adds DEFAULT to query (note: this was added for a specific case, adding a shard function to pk)
+* postgresql uses "RETURNING" for all pks instead of pks that are auto
+
+Only tested for my specific use case using postgres
+
 # beego orm
 
 [![Build Status](https://drone.io/github.com/astaxie/beego/status.png)](https://drone.io/github.com/astaxie/beego/latest)
